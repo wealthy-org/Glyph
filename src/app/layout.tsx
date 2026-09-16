@@ -1,3 +1,5 @@
+import { Toaster } from "@/components/ui/sonner";
+import { Web3Provider } from "@/providers/web3-provider";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -37,7 +39,10 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col dark">
-        {children}
+        <Web3Provider>
+          {children}
+          <Toaster />
+        </Web3Provider>
       </body>
     </html>
   );

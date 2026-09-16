@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Wallet2Icon } from "lucide-react";
+import { ConnectWallet } from "@/features/wallet/components/connect-wallet";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,21 +29,7 @@ export default function LandingHeader() {
                             <Link
                                 href="#"
                                 className="opacity-90 transition hover:opacity-100">
-                                Agent
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="#"
-                                className="opacity-90 transition hover:opacity-100">
-                                Terminal
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="#"
-                                className="opacity-90 transition hover:opacity-100">
-                                Token
+                                Leaderboard
                             </Link>
                         </li>
                     </ul>
@@ -52,10 +37,7 @@ export default function LandingHeader() {
 
                 {/* Right Side: Connect Wallet Btn */}
                 <div className="flex items-center gap-3 sm:gap-6">
-                    <Button variant="outline" className="rounded-full">
-                        Connect Wallet
-                        <Wallet2Icon />
-                    </Button>
+                    <ConnectWallet />
                 </div>
             </div>
         </header>

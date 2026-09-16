@@ -55,7 +55,7 @@ export default function ContractSection() {
             <Separator orientation="horizontal" className="hidden max-lg:block" />
 
             <div className="w-full">
-                <h1 className="uppercase opacity-70 flex items-center gap-2">
+                <h1 className="uppercase text-muted-foreground flex items-center gap-2">
                     Available On
                 </h1>
                 <div className="flex gap-4 mt-3
@@ -69,7 +69,7 @@ export default function ContractSection() {
                                 height={2000}
                                 className="size-8"
                             />
-                            <div className="">
+                            <div>
                                 <h1 className="text-base font-medium">DEX</h1>
                                 <p className="text-muted-foreground">Trade Now</p>
                             </div>
@@ -84,7 +84,7 @@ export default function ContractSection() {
                                 height={72}
                                 className="size-8"
                             />
-                            <div className="">
+                            <div>
                                 <h1 className="text-base font-medium">Axiom</h1>
                                 <p className="text-muted-foreground">View Charts</p>
                             </div>

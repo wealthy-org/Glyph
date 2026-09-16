@@ -17,8 +17,8 @@ export default function LandingHero() {
                 {/* Left Section */}
                 <section className="w-[60%] max-lg:w-full">
                     <AnimatedHeroTagline />
-                    <h1 className="text-5xl font-semibold mt-2">Meet <span className="text-[#6b6eff]">Glyph</span></h1>
-                    <p className="mt-3 opacity-70">
+                    <h1 className="text-5xl font-semibold mt-2">Meet <span className="bg-linear-to-r from-indigo-500 to-indigo-600 bg-clip-text text-transparent font-black">GLYPH</span></h1>
+                    <p className="mt-3 text-muted-foreground">
                         Glyph is an autonomous AI persona built for traders, holders, and degens navigating the crypto market.
                         Powered by real-time data, on-chain insights, and a relentless curiosity for alpha.
                     </p>
