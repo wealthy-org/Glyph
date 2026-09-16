@@ -1,9 +1,12 @@
+"use client"
+
 import {
     ArrowRightIcon,
     SearchIcon,
     Wallet2Icon,
 } from "lucide-react";
 
+import { PaginationWithLinks } from "@/components/custom/pagination-with-link";
 import { Button } from "@/components/ui/button";
 import {
     InputGroup,
@@ -18,7 +21,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { PaginationWithLinks } from "@/components/custom/pagination-with-link";
+import { Suspense } from "react";
 
 interface LeaderboardUser {
     rank: number;
@@ -95,10 +98,12 @@ export default function Leaderboard({
                     </TableBody>
                 </Table>
 
-                <PaginationWithLinks
-                    totalCount={100}
-                    pageSize={10}
-                />
+                <Suspense>
+                    <PaginationWithLinks
+                        totalCount={100}
+                        pageSize={10}
+                    />
+                </Suspense>
             </div>
 
             {/* Sidebar */}
