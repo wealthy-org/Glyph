@@ -1,10 +1,10 @@
 "use client";
 
 import { ConnectWallet } from "@/features/wallet/connect-wallet";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function LandingHeader() {
@@ -80,6 +80,17 @@ export default function LandingHeader() {
                                     }`}
                                 >
                                     Chat with Glyph
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link
+                                    href="/feed"
+                                    className={`text-muted-foreground transition-colors hover:text-white ${
+                                        pathname === "/feed" ? "text-white" : ""
+                                    }`}
+                                >
+                                    Feed
                                 </Link>
                             </li>
                         </ul>

@@ -1,3 +1,4 @@
+import { connectWallet } from "@/features/wallet/server";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
@@ -18,18 +19,7 @@ export async function POST(request: Request) {
             );
         }
 
-        const user = await prisma.user.upsert({
-            where: {
-                walletAddress,
-            },
-            update: {
-                lastLoginAt: new Date(),
-            },
-            create: {
-                walletAddress,
-                lastLoginAt: new Date(),
-            },
-        });
+        const user = await connectWallet(walletAddress);
 
         return NextResponse.json({
             success: true,

@@ -4,12 +4,14 @@ interface ChatInputProps {
     value: string;
     onChange: (value: string) => void;
     onSubmit: () => void;
+    disabled?: boolean;
 }
 
 export function ChatInput({
     value,
     onChange,
     onSubmit,
+    disabled = false
 }: ChatInputProps) {
     return (
         <div className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-5 sm:px-6">
@@ -21,6 +23,7 @@ export function ChatInput({
                     <div className="flex items-end gap-2">
 
                         <textarea
+                            disabled={disabled}
                             value={value}
                             onChange={(e) =>
                                 onChange(e.target.value)
@@ -38,17 +41,7 @@ export function ChatInput({
                             }}
                             placeholder="Ask Glyph anything..."
                             rows={1}
-                            className="
-                                min-h-11
-                                flex-1
-                                resize-none
-                                bg-transparent
-                                px-3
-                                py-3
-                                text-sm
-                                text-white
-                                outline-none
-                                placeholder:text-white/25
+                            className=" min-h-11 flex-1 resize-none bg-transparent px-3 py-3 text-sm text-white outline-none placeholder:text-white/25
                             "
                         />
 
@@ -56,20 +49,7 @@ export function ChatInput({
                             type="button"
                             onClick={onSubmit}
                             disabled={!value.trim()}
-                            className="
-                                flex
-                                size-11
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-xl
-                                bg-indigo-600
-                                text-white
-                                transition-all
-                                hover:bg-indigo-500
-                                active:scale-95
-                                disabled:cursor-not-allowed
-                                disabled:opacity-30
+                            className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white transition-all hover:bg-indigo-500 active:scale-95 disabled:cursor-not-allowed disabled:opacity-30
                             "
                         >
                             <ArrowUp className="size-5" />

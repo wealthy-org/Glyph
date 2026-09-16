@@ -56,7 +56,7 @@ export default function LandingHero() {
                 alt="Glyph Avatar"
                 width={1254}
                 height={1254}
-                className="size-125 absolute right-0 bottom-0 z-0 opacity-70 animate-[pulse_3s_ease-in-out_infinite]
+                className="min-w-80 max-w-125 min-h-80 max-h-125 object-contain absolute right-0 bottom-0 z-0 opacity-70 animate-[pulse_3s_ease-in-out_infinite]
                 max-lg:size-100 max-lg:opacity-50 max-lg:blur-[1px]"/>
         </div>
     )

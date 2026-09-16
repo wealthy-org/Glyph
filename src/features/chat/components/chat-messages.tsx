@@ -1,16 +1,9 @@
-import Image from "next/image";
 import { Copy, MoreHorizontal } from "lucide-react";
-
-interface Message {
-    id: number;
-    role: "user" | "glyph";
-    time: string;
-    content: string;
-    extra?: string;
-}
+import Image from "next/image";
+import { ChatMessage } from "../types/chat-message";
 
 interface ChatMessagesProps {
-    messages: Message[];
+    messages: ChatMessage[];
 }
 
 export function ChatMessages({
@@ -19,21 +12,19 @@ export function ChatMessages({
     return (
         <div className="flex flex-1 flex-col gap-8">
 
-            {messages.map((message) => {
+            {messages.map((message, index) => {
 
                 const isGlyph = message.role === "glyph";
 
                 return (
                     <div
-                        key={message.id}
-                        className={`flex w-full ${
-                            isGlyph
-                                ? "justify-start"
-                                : "justify-end"
-                        }`}
+                        key={index}
+                        className={`flex w-full ${isGlyph
+                            ? "justify-start"
+                            : "justify-end"
+                            }`}
                     >
 
-                        {/* GLYPH */}
                         {isGlyph ? (
                             <div className="flex max-w-3xl gap-4">
 
@@ -65,17 +56,13 @@ export function ChatMessages({
                                     </div>
 
                                     <div className="text-[15px] leading-7 text-white/75 sm:text-base">
-
-                                        <p>
-                                            {message.content}
-                                        </p>
-
-                                        {message.extra && (
-                                            <p className="mt-4 text-white/55">
-                                                {message.extra}
-                                            </p>
-                                        )}
-
+                                        {
+                                            message.content === ""
+                                                ?
+                                                <LoadingDots />
+                                                :
+                                                <p>{message.content}</p>
+                                        }
                                     </div>
 
                                     {/* Actions */}
@@ -123,6 +110,16 @@ export function ChatMessages({
                 );
             })}
 
+        </div>
+    );
+}
+
+function LoadingDots() {
+    return (
+        <div className="flex items-center gap-1 py-1">
+            <span className="size-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:-0.3s]" />
+            <span className="size-1.5 animate-bounce rounded-full bg-white/50 [animation-delay:-0.15s]" />
+            <span className="size-1.5 animate-bounce rounded-full bg-white/50" />
         </div>
     );
 }

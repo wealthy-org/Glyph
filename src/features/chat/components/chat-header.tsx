@@ -27,12 +27,6 @@ export function ChatHeader() {
                     </p>
                 </div>
 
-                {/* Status */}
-                <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-3 py-2 text-xs text-white/50 sm:flex">
-                    <span className="size-1.5 rounded-full bg-emerald-400" />
-                    GLYPH ONLINE
-                </div>
-
             </div>
         </div>
     );
