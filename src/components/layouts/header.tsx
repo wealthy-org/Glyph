@@ -1,8 +1,14 @@
+"use client"
+
 import { ConnectWallet } from "@/features/wallet/connect-wallet";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function LandingHeader() {
+
+    const pathname = usePathname();
+
     return (
         <header className="fixed top-4 z-50 w-full py-4 sm:px-6 px-[5%]">
             {/* Container */}
@@ -27,9 +33,26 @@ export default function LandingHeader() {
                     <ul className="flex gap-6 text-sm">
                         <li>
                             <Link
-                                href="/leaderboard" target="_blank"
-                                className="text-muted-foreground hover:text-white">
+                                href="/"
+                                className={`text-muted-foreground hover:text-white
+                                ${pathname === "/" ? "text-white" : false}`}>
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/leaderboard"
+                                className={`text-muted-foreground hover:text-white
+                                ${pathname === "/leaderboard" ? "text-white" : false}`}>
                                 Leaderboard
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/chat"
+                                className={`text-muted-foreground hover:text-white
+                                ${pathname === "/chat" ? "text-white" : false}`}>
+                                Chat with Glyph
                             </Link>
                         </li>
                     </ul>
