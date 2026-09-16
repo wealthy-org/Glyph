@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Terminal",
   ],
   icons: {
-    icon: "/logos/logo-only.png",
+    icon: "/logos/glyph-logo-only.png",
   },
 };
 

@@ -1,5 +1,5 @@
+import LandingHero from "@/features/landing/hero/hero";
 import LandingHeader from "@/features/landing/layouts/header";
-import LandingHero from "@/features/landing/views/hero";
 
 export default function Home() {
   return (
