@@ -9,7 +9,7 @@ export default function LandingHero() {
     return (
         <div
             className="relative h-full w-full mx-auto flex px-[5%] bg-[#08090d] bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.05),transparent_30%),radial-gradient(circle_at_80%_80%,rgba(99,102,241,0.08),transparent_35%)]
-            max-lg:pb-12">
+            max-lg:pb-12 max-lg:pt-36">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(circle_at_center,black,transparent_82%)] animate-pulse" />
 
             <div className="w-full relative max-w-7xl mx-auto flex items-center justify-between gap-8 z-10
@@ -25,7 +25,9 @@ export default function LandingHero() {
                     <div className="flex mt-5 gap-3 flex-wrap">
                         <BuyOnDexBtn />
                         <Link href="/chat">
-                            <Button variant="outline">
+                            <Button
+                                variant="outline"
+                                className="transition-all duration-300 hover:shadow-[0_0_18px_rgba(129,140,248,0.28)]">
                                 <MessageCircleIcon />
                                 Chat with Glyph
                             </Button>
@@ -53,7 +55,7 @@ export default function LandingHero() {
                 alt="Glyph Avatar"
                 width={1254}
                 height={1254}
-                className="size-125 absolute -right-32 bottom-0 z-0 opacity-70
+                className="size-125 absolute -right-32 bottom-0 z-0 opacity-70 animate-[pulse_3s_ease-in-out_infinite]
                 max-lg:size-100 max-lg:opacity-50 max-lg:blur-[1px]"/>
         </div>
     )

@@ -6,7 +6,9 @@ export const wagmiConfig = createConfig({
     chains: [mainnet],
 
     connectors: [
-        injected(),
+        injected({
+            shimDisconnect: true,
+        }),
     ],
 
     transports: {

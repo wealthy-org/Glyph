@@ -1,4 +1,4 @@
-import { ConnectWallet } from "@/features/wallet/components/connect-wallet";
+import { ConnectWallet } from "@/features/wallet/connect-wallet";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,8 +27,8 @@ export default function LandingHeader() {
                     <ul className="flex gap-6 text-sm">
                         <li>
                             <Link
-                                href="#"
-                                className="opacity-90 transition hover:opacity-100">
+                                href="/leaderboard" target="_blank"
+                                className="text-muted-foreground hover:text-white">
                                 Leaderboard
                             </Link>
                         </li>

@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <LandingHeader />
       <main className="flex flex-col w-full h-screen overflow-hidden bg-linear-to-b from-slate-950 to-gray-950
-      max-lg:pt-36 max-lg:h-auto">
+      max-lg:h-auto">
         <LandingHero />
       </main>
     </>
